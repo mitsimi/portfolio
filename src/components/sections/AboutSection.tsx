@@ -59,12 +59,6 @@ export const AboutSection = ({ data }: AboutSectionProps) => {
       className="relative py-32 px-6 md:px-12 bg-black text-bg overflow-hidden"
       aria-labelledby="about-heading"
     >
-      {/* Diagonal accent stripe */}
-      <div
-        className="absolute top-0 right-0 w-32 md:w-48 h-full bg-accent/10 -skew-x-12 translate-x-16"
-        aria-hidden="true"
-      />
-
       {/* Grid pattern overlay */}
       <div
         className="absolute inset-0 opacity-[0.03]"
@@ -205,15 +199,6 @@ export const AboutSection = ({ data }: AboutSectionProps) => {
             </div>
           </motion.div>
         </div>
-
-        {/* Bottom decorative element */}
-        <motion.div
-          initial={{ scaleX: 0 }}
-          animate={isInView ? { scaleX: 1 } : {}}
-          transition={{ delay: 0.8, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-16 h-1 bg-accent/30"
-          style={{ transformOrigin: "left" }}
-        />
       </div>
     </section>
   );
