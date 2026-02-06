@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
+import { ArrowRight } from "lucide-react";
 import type { PortfolioData } from "../../data/portfolio";
 import { GridPattern, NoiseOverlay, DiagonalStripe, BoldLabel } from "../ui";
 
@@ -98,18 +99,7 @@ export const HeroSection = ({ data }: HeroSectionProps) => {
             className="inline-flex items-center gap-4 px-8 py-4 bg-black text-bg font-bold uppercase tracking-[0.2em] text-sm hover:bg-accent transition-colors border-4 border-black font-mono"
           >
             View Work
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="square"
-                strokeWidth={3}
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              />
-            </svg>
+            <ArrowRight size={20} stroke-width={3} />
           </a>
           <a
             href={`https://${data.social.github}`}

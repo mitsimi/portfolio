@@ -62,26 +62,12 @@ export const ContactSection = ({ data }: ContactSectionProps) => {
               href={`https://${data.social.github}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 bg-black text-white font-bold uppercase tracking-[0.2em] text-sm hover:bg-bg hover:text-black transition-colors border-4 border-black font-mono"
+              className="px-8 py-4 bg-black text-white font-bold uppercase tracking-[0.2em] text-sm hover:bg-bg hover:text-black transition-colors  border-4 border-black font-mono"
             >
-              GitHub
+              Github
             </a>
           </motion.div>
         </motion.div>
-
-        <motion.footer
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ delay: 0.7 }}
-          className="mt-32 pt-8 border-t-4 border-black/20 flex flex-col md:flex-row justify-between items-start md:items-center gap-4"
-        >
-          <BoldLabel className="text-black/50">
-            {data.location.toUpperCase()}
-          </BoldLabel>
-          <BoldLabel className="text-black/50">
-            {new Date().getFullYear()} {data.name.toUpperCase()}
-          </BoldLabel>
-        </motion.footer>
       </div>
     </section>
   );

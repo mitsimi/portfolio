@@ -8,6 +8,7 @@ import {
   ExperienceSection,
   ContactSection,
 } from "./sections";
+import { Footer } from "./ui";
 
 interface Props {
   data: PortfolioData;
@@ -42,6 +43,7 @@ export default function Portfolio({ data }: Props) {
       <ProjectsSection data={data} />
       <ExperienceSection data={data} />
       <ContactSection data={data} />
+      <Footer data={data} />
     </div>
   );
 }

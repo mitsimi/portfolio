@@ -5,7 +5,7 @@ import Portfolio from "../components/Portfolio";
 ---
 
 <Layout
-    title={`${portfolioData.name} — Portfolio`}
+    title={`${portfolioData.username} - ${portfolioData.name}`}
     description="Software developer portfolio with a raw industrial aesthetic"
 >
     <Portfolio client:load data={portfolioData} />
