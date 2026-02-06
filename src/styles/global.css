@@ -10,7 +10,7 @@
     --color-surface: #ffffff;
     --color-text: #000000;
     --color-text-muted: #666666;
-    --color-accent: #00bfff; /* current orange: #ff3d00, blue?: #00bfff */
+    --color-accent: #ff3d00; /* current orange: #ff3d00, blue?: #00bfff */
 
     /* === Typography === */
     --font-mono:
