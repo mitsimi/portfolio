@@ -42,10 +42,6 @@ export const ContactSection = ({ data }: ContactSectionProps) => {
             </span>
           </h2>
 
-          <p className="text-xl text-black/70 max-w-xl mb-12 font-sans">
-            Got a project in mind? Let's build something brutal together.
-          </p>
-
           <motion.a
             href={`mailto:${data.email}`}
             initial={{ opacity: 0, y: 20 }}
