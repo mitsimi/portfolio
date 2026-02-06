@@ -87,6 +87,7 @@ const FeaturedProjectCard = ({
               <motion.img
                 src={project.image}
                 alt={`${project.title} screenshot`}
+                loading="lazy"
                 className="w-full h-full object-cover object-top"
                 initial={{ scale: 1 }}
                 animate={{ scale: isHovered ? 1.05 : 1 }}
