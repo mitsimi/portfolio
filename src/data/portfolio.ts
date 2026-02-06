@@ -55,6 +55,19 @@ export const portfolioData: PortfolioData = {
   },
   projects: [
     {
+      id: "jump_rs",
+      title: "Jumpers",
+      subtitle: "Wake-on-LAN web application",
+      description:
+        "A Wake-on-LAN web server built with Rust and Axum for waking devices remotely.",
+      longDescription:
+        "A Wake-on-LAN web application built with Rust and Axum. Features include HTTP API for waking devices, JSON-based device storage, configurable via file or environment variables, optional OpenTelemetry tracing support, and Docker deployment. The frontend is a TypeScript SPA served by the Rust backend, with OpenAPI-generated client code for type-safe API communication.",
+      tech: ["Rust", "Axum", "TypeScript", "React", "OpenTelemetry", "Docker"],
+      year: 2026,
+      source: "https://github.com/mitsimi/jump_rs",
+      image: "/images/jumpers.png",
+    },
+    {
       id: "code-share",
       title: "CodeShare",
       subtitle: "Full-stack snippet platform",
@@ -67,19 +80,6 @@ export const portfolioData: PortfolioData = {
       demo: "https://codeshare.mitsimi.dev",
       source: "https://github.com/mitsimi/codeshare",
       image: "/images/codeshare.png",
-    },
-    {
-      id: "jump_rs",
-      title: "Jumpers",
-      subtitle: "Wake-on-LAN web application",
-      description:
-        "A Wake-on-LAN web server built with Rust and Axum for waking devices remotely.",
-      longDescription:
-        "A Wake-on-LAN web application built with Rust and Axum. Features include HTTP API for waking devices, JSON-based device storage, configurable via file or environment variables, optional OpenTelemetry tracing support, and Docker deployment. The frontend is a TypeScript SPA served by the Rust backend, with OpenAPI-generated client code for type-safe API communication.",
-      tech: ["Rust", "Axum", "TypeScript", "React", "OpenTelemetry", "Docker"],
-      year: 2026,
-      source: "https://github.com/mitsimi/jump_rs",
-      image: "/images/jumpers.png",
     },
     {
       id: "veil",
