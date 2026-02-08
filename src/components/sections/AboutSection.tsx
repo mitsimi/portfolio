@@ -67,7 +67,9 @@ export const AboutSection = ({ data, strings }: AboutSectionProps) => {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <BoldLabel className="text-accent">{strings.about.sectionLabel}</BoldLabel>
+          <BoldLabel className="text-accent">
+            {strings.about.sectionLabel}
+          </BoldLabel>
           <h2
             id="about-heading"
             className="text-5xl md:text-8xl font-black mt-6 leading-[0.95] font-mono"
@@ -113,7 +115,7 @@ export const AboutSection = ({ data, strings }: AboutSectionProps) => {
                 className="border-4 border-bg/20 p-6 group hover:border-accent transition-colors"
               >
                 <div className="text-5xl md:text-6xl font-black text-accent font-mono leading-none">
-                  {data.projects.length}
+                  +{data.projects.length}
                 </div>
                 <BoldLabel className="text-bg/50 mt-3 block group-hover:text-bg transition-colors">
                   {strings.about.projects}

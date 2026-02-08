@@ -17,7 +17,7 @@ export const portfolioData: PortfolioData = {
       title: "Jumpers",
       subtitle: "Wake-on-LAN-Webanwendung",
       description:
-        "Ein Wake-on-LAN-Webserver mit Rust und Axum, der Geräte remote aufweckt.",
+        "Ein Wake-on-LAN-Webserver mit Rust und Axum, der Geräte über das Netzwerk aufweckt.",
       longDescription:
         "Eine Wake-on-LAN-Webanwendung mit Rust und Axum. Enthält eine HTTP-API zum Aufwecken von Geräten, JSON-basierte Gerätespeicherung, Konfiguration per Datei oder Umgebungsvariablen, optionales OpenTelemetry-Tracing und Docker-Deployment. Das Frontend ist eine TypeScript-SPA, die vom Rust-Backend ausgeliefert wird, mit OpenAPI-generiertem Client-Code für typsichere API-Kommunikation.",
       tech: ["Rust", "Axum", "TypeScript", "React", "OpenTelemetry", "Docker"],
@@ -93,8 +93,7 @@ export const portfolioData: PortfolioData = {
       company: "Gemeinde Pasching",
       role: "IT-Koordinator",
       period: "2023 - Heute",
-      description:
-        "Koordination aller IT-Operationen für die Gemeinde",
+      description: "Koordination aller IT-Operationen für die Gemeinde",
       highlights: [
         "Wartung von Systemen und Netzwerk-Fehlerbehebung",
         "Direkter User-Support und technische Unterstützung",
@@ -103,7 +102,7 @@ export const portfolioData: PortfolioData = {
     },
     {
       company: "Johannes Kepler Universität",
-      role: "Informatik-Student (Bachelor)",
+      role: "Informatik Bachelorstudium",
       period: "2023 - Heute",
       description:
         "Bachelorstudium Informatik mit Schwerpunkt Software Engineering",
@@ -126,7 +125,7 @@ export const portfolioData: PortfolioData = {
     },
     {
       company: "HTBLA Traun",
-      role: "Information & Communication Technologies",
+      role: "Informations- und Kommunikations-Technologien",
       period: "2017 - 2022",
       description:
         "Höhere technische Ausbildung mit Schwerpunkt IT und Kommunikation",

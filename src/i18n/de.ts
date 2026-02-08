@@ -20,7 +20,7 @@ export const strings = {
     heading: "ÜBER",
     whoIAm: "WER ICH BIN",
     projects: "Projekte",
-    yearsCoding: "Jahre Coding",
+    yearsCoding: "Jahre Erfahrung",
     techStack: "TECH STACK",
     skillsCount: "Fähigkeiten",
   },

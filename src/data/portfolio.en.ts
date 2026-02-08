@@ -103,10 +103,10 @@ export const portfolioData: PortfolioData = {
     },
     {
       company: "Johannes Kepler University",
-      role: "Informatics Student (Bachelor)",
+      role: "Bachelor's Degree in Computer Science",
       period: "2023 - Present",
       description:
-        "Pursuing a Bachelor's degree in Informatics with focus on software engineering",
+        "Studying Informatics with a specialization in software engineering and system architecture",
       highlights: [
         "Studying algorithms, data structures, and software architecture",
         "Working on practical projects applying theoretical knowledge",
