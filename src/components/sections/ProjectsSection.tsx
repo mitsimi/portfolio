@@ -2,19 +2,23 @@ import { useRef, useState } from "react";
 import { motion, useInView } from "motion/react";
 import { ExternalLink, Github, ArrowRight } from "lucide-react";
 import type { PortfolioData, Project } from "../../data/portfolio";
+import type { Strings } from "../../i18n";
 import { GridPattern, BoldLabel } from "../ui";
 
 interface ProjectsSectionProps {
   data: PortfolioData;
+  strings: Strings;
 }
 
 // Featured project card - horizontal layout with image
 const FeaturedProjectCard = ({
   project,
   index,
+  strings,
 }: {
   project: Project;
   index: number;
+  strings: Strings;
 }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -115,11 +119,11 @@ const FeaturedProjectCard = ({
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-black/70 hover:text-black transition-colors"
                     whileHover={{ x: 4 }}
-                    aria-label={`View ${project.title} source code`}
+                    aria-label={strings.projects.ariaSource.replace("{title}", project.title)}
                   >
                     <Github size={18} aria-hidden="true" />
                     <span className="text-sm font-bold uppercase tracking-wider font-mono">
-                      Source
+                      {strings.projects.source}
                     </span>
                   </motion.a>
                 )}
@@ -130,10 +134,10 @@ const FeaturedProjectCard = ({
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-accent hover:text-black transition-colors ml-auto"
                     whileHover={{ x: 4 }}
-                    aria-label={`View ${project.title} live demo`}
+                    aria-label={strings.projects.ariaLive.replace("{title}", project.title)}
                   >
                     <span className="text-sm font-bold uppercase tracking-wider font-mono">
-                      Live Demo
+                      {strings.projects.liveDemo}
                     </span>
                     <ArrowRight
                       size={20}
@@ -155,9 +159,11 @@ const FeaturedProjectCard = ({
 const CompactProjectCard = ({
   project,
   index,
+  strings,
 }: {
   project: Project;
   index: number;
+  strings: Strings;
 }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
@@ -232,11 +238,11 @@ const CompactProjectCard = ({
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-black/60 hover:text-black transition-colors"
                 whileHover={{ x: 4 }}
-                aria-label={`View ${project.title} source code`}
+                aria-label={strings.projects.ariaSource.replace("{title}", project.title)}
               >
                 <Github size={18} aria-hidden="true" />
                 <span className="text-xs font-bold uppercase tracking-wider font-mono">
-                  Source
+                  {strings.projects.source}
                 </span>
               </motion.a>
             )}
@@ -247,10 +253,10 @@ const CompactProjectCard = ({
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-accent hover:text-black transition-colors ml-auto"
                 whileHover={{ x: 4 }}
-                aria-label={`View ${project.title} live demo`}
+                aria-label={strings.projects.ariaLive.replace("{title}", project.title)}
               >
                 <span className="text-xs font-bold uppercase tracking-wider font-mono">
-                  Demo
+                  {strings.projects.demo}
                 </span>
                 <ExternalLink size={16} strokeWidth={2.5} aria-hidden="true" />
               </motion.a>
@@ -271,7 +277,7 @@ const CompactProjectCard = ({
   );
 };
 
-export const ProjectsSection = ({ data }: ProjectsSectionProps) => {
+export const ProjectsSection = ({ data, strings }: ProjectsSectionProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -299,12 +305,13 @@ export const ProjectsSection = ({ data }: ProjectsSectionProps) => {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <BoldLabel className="text-accent">03 / Selected Projects</BoldLabel>
+          <BoldLabel className="text-accent">{strings.projects.sectionLabel}</BoldLabel>
           <h2
             id="projects-heading"
             className="text-5xl md:text-8xl font-black mt-6 leading-[0.85] font-mono"
           >
-            PROJECTS<span className="text-accent">_</span>
+            {strings.projects.heading}
+            <span className="text-accent">_</span>
           </h2>
         </motion.div>
 
@@ -316,6 +323,7 @@ export const ProjectsSection = ({ data }: ProjectsSectionProps) => {
                 key={project.id}
                 project={project}
                 index={index}
+                strings={strings}
               />
             ))}
           </div>
@@ -329,6 +337,7 @@ export const ProjectsSection = ({ data }: ProjectsSectionProps) => {
                 key={project.id}
                 project={project}
                 index={featuredCount + index}
+                strings={strings}
               />
             ))}
           </div>

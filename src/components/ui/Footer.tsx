@@ -1,12 +1,14 @@
 import { AtSign, MapPin } from "lucide-react";
 import type { PortfolioData } from "../../data/portfolio";
+import type { Strings } from "../../i18n";
 import { BoldLabel } from "./Typography";
 
 interface FooterProps {
   data: PortfolioData;
+  strings: Strings;
 }
 
-export const Footer = ({ data }: FooterProps) => {
+export const Footer = ({ data, strings }: FooterProps) => {
   return (
     <footer className="relative px-6 md:px-12 py-12 bg-bg border-t-4 border-black/10">
       <div className="max-w-450 mx-auto">
@@ -21,7 +23,7 @@ export const Footer = ({ data }: FooterProps) => {
             {data.name.toUpperCase()}
           </BoldLabel>
           <BoldLabel className="text-black/30">
-            MADE WITH CODE & COFFEE
+            {strings.footer.madeWith}
           </BoldLabel>
         </div>
       </div>

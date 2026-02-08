@@ -1,13 +1,15 @@
 import { useRef } from "react";
 import { motion, useInView } from "motion/react";
 import type { PortfolioData } from "../../data/portfolio";
+import type { Strings } from "../../i18n";
 import { BoldLabel } from "../ui";
 
 interface ExperienceSectionProps {
   data: PortfolioData;
+  strings: Strings;
 }
 
-export const ExperienceSection = ({ data }: ExperienceSectionProps) => {
+export const ExperienceSection = ({ data, strings }: ExperienceSectionProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -25,12 +27,13 @@ export const ExperienceSection = ({ data }: ExperienceSectionProps) => {
           transition={{ duration: 0.3 }}
           className="mb-16"
         >
-          <BoldLabel className="text-accent">04 / Experience</BoldLabel>
+          <BoldLabel className="text-accent">{strings.experience.sectionLabel}</BoldLabel>
           <h2
             id="journey-heading"
             className="text-5xl md:text-8xl font-black mt-6 leading-[0.95] font-mono"
           >
-            JOURNEY<span className="text-accent">_</span>
+            {strings.experience.heading}
+            <span className="text-accent">_</span>
           </h2>
         </motion.div>
 

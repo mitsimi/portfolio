@@ -1,13 +1,15 @@
 import { useRef } from "react";
 import { motion, useInView } from "motion/react";
 import type { PortfolioData } from "../../data/portfolio";
+import type { Strings } from "../../i18n";
 import { BoldLabel } from "../ui";
 
 interface ContactSectionProps {
   data: PortfolioData;
+  strings: Strings;
 }
 
-export const ContactSection = ({ data }: ContactSectionProps) => {
+export const ContactSection = ({ data, strings }: ContactSectionProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -24,13 +26,15 @@ export const ContactSection = ({ data }: ContactSectionProps) => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <BoldLabel className="text-accent">05 / Contact</BoldLabel>
+          <BoldLabel className="text-accent">
+            {strings.contact.sectionLabel}
+          </BoldLabel>
 
           <h2
             id="connect-heading"
             className="text-5xl md:text-8xl font-black mt-6 mb-8 leading-[0.95] font-mono"
           >
-            LET'S
+            {strings.contact.headingLine1}
             <br />
             <span
               style={{
@@ -38,7 +42,7 @@ export const ContactSection = ({ data }: ContactSectionProps) => {
                 WebkitTextFillColor: "transparent",
               }}
             >
-              CONNECT_
+              {strings.contact.headingLine2}_
             </span>
           </h2>
 
@@ -64,7 +68,7 @@ export const ContactSection = ({ data }: ContactSectionProps) => {
               rel="noopener noreferrer"
               className="px-8 py-4 bg-black text-white font-bold uppercase tracking-[0.2em] text-sm hover:bg-bg hover:text-black transition-colors  border-4 border-black font-mono"
             >
-              Github
+              {strings.contact.github}
             </a>
           </motion.div>
         </motion.div>
