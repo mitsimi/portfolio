@@ -1,36 +1,40 @@
-import { useRef } from "react";
-import { motion, useInView } from "motion/react";
+import { motion } from "motion/react";
 import type { PortfolioData } from "../../data/portfolio";
+import type { Strings } from "../../i18n";
 import { BoldLabel } from "../ui";
 
 interface ExperienceSectionProps {
   data: PortfolioData;
+  strings: Strings;
 }
 
-export const ExperienceSection = ({ data }: ExperienceSectionProps) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
+export const ExperienceSection = ({
+  data,
+  strings,
+}: ExperienceSectionProps) => {
   return (
     <section
       id="journey"
-      ref={ref}
       className="relative py-32 px-6 md:px-12 bg-black text-bg overflow-hidden"
       aria-labelledby="journey-heading"
     >
       <div className="max-w-350 mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2, margin: "0px 0px -15% 0px" }}
           transition={{ duration: 0.3 }}
           className="mb-16"
         >
-          <BoldLabel className="text-accent">04 / Experience</BoldLabel>
+          <BoldLabel className="text-accent">
+            {strings.experience.sectionLabel}
+          </BoldLabel>
           <h2
             id="journey-heading"
             className="text-5xl md:text-8xl font-black mt-6 leading-[0.95] font-mono"
           >
-            JOURNEY<span className="text-accent">_</span>
+            {strings.experience.heading}
+            <span className="text-accent">_</span>
           </h2>
         </motion.div>
 
@@ -39,8 +43,9 @@ export const ExperienceSection = ({ data }: ExperienceSectionProps) => {
             <motion.article
               key={exp.company}
               initial={{ opacity: 0, x: -50 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ delay: index * 0.2, duration: 0.6 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.2, margin: "0px 0px -15% 0px" }}
+              transition={{ delay: index * 0.08, duration: 0.5 }}
               className="border-t-4 border-bg/20 py-12 group hover:bg-bg/5 transition-colors px-6 -mx-6"
             >
               <div className="grid md:grid-cols-4 gap-8 items-start">

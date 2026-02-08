@@ -2,13 +2,15 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import type { PortfolioData } from "../../data/portfolio";
+import type { Strings } from "../../i18n";
 import { GridPattern, NoiseOverlay, DiagonalStripe, BoldLabel } from "../ui";
 
 interface HeroSectionProps {
   data: PortfolioData;
+  strings: Strings;
 }
 
-export const HeroSection = ({ data }: HeroSectionProps) => {
+export const HeroSection = ({ data, strings }: HeroSectionProps) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -47,7 +49,7 @@ export const HeroSection = ({ data }: HeroSectionProps) => {
           transition={{ delay: 0.2, duration: 0.6, ease: [0.87, 0, 0.13, 1] }}
           className="mb-8"
         >
-          <BoldLabel className="text-accent">Software Developer</BoldLabel>
+          <BoldLabel className="text-accent">{strings.hero.label}</BoldLabel>
         </motion.div>
 
         <div className="overflow-hidden">
@@ -98,7 +100,7 @@ export const HeroSection = ({ data }: HeroSectionProps) => {
             href="#projects"
             className="inline-flex items-center gap-4 px-8 py-4 bg-black text-bg font-bold uppercase tracking-[0.2em] text-sm hover:bg-accent transition-colors border-4 border-black font-mono"
           >
-            View Work
+            {strings.hero.ctaPrimary}
             <ArrowRight size={20} strokeWidth={3} />
           </a>
           <a
@@ -107,7 +109,7 @@ export const HeroSection = ({ data }: HeroSectionProps) => {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-4 px-8 py-4 bg-transparent text-black font-bold uppercase tracking-[0.2em] text-sm hover:bg-black hover:text-bg transition-colors border-4 border-black font-mono"
           >
-            GitHub
+            {strings.hero.ctaSecondary}
           </a>
         </motion.div>
       </motion.div>
@@ -126,7 +128,7 @@ export const HeroSection = ({ data }: HeroSectionProps) => {
         >
           <motion.div className="w-2 h-2 bg-black rounded-full" />
         </motion.div>
-        <BoldLabel className="text-black/50">Scroll</BoldLabel>
+        <BoldLabel className="text-black/50">{strings.hero.scroll}</BoldLabel>
       </motion.div>
     </section>
   );

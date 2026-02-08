@@ -2,10 +2,12 @@ import { useRef, useState } from "react";
 import { motion, useInView } from "motion/react";
 import { MapPin } from "lucide-react";
 import type { PortfolioData } from "../../data/portfolio";
+import type { Strings } from "../../i18n";
 import { BoldLabel } from "../ui";
 
 interface AboutSectionProps {
   data: PortfolioData;
+  strings: Strings;
 }
 
 const SkillTag = ({ skill, delay }: { skill: string; delay: number }) => {
@@ -30,7 +32,7 @@ const SkillTag = ({ skill, delay }: { skill: string; delay: number }) => {
   );
 };
 
-export const AboutSection = ({ data }: AboutSectionProps) => {
+export const AboutSection = ({ data, strings }: AboutSectionProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -65,12 +67,15 @@ export const AboutSection = ({ data }: AboutSectionProps) => {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <BoldLabel className="text-accent">02 / About</BoldLabel>
+          <BoldLabel className="text-accent">
+            {strings.about.sectionLabel}
+          </BoldLabel>
           <h2
             id="about-heading"
             className="text-5xl md:text-8xl font-black mt-6 leading-[0.95] font-mono"
           >
-            ABOUT<span className="text-accent">_</span>
+            {strings.about.heading}
+            <span className="text-accent">_</span>
           </h2>
         </motion.div>
 
@@ -86,7 +91,7 @@ export const AboutSection = ({ data }: AboutSectionProps) => {
             {/* Bio card */}
             <div className="border-4 border-bg mb-8">
               <div className="bg-bg text-black px-6 py-4">
-                <BoldLabel>WHO I AM</BoldLabel>
+                <BoldLabel>{strings.about.whoIAm}</BoldLabel>
               </div>
               <div className="p-6 md:p-8">
                 <p className="text-lg md:text-xl text-bg/80 leading-relaxed font-sans mb-6">
@@ -110,10 +115,10 @@ export const AboutSection = ({ data }: AboutSectionProps) => {
                 className="border-4 border-bg/20 p-6 group hover:border-accent transition-colors"
               >
                 <div className="text-5xl md:text-6xl font-black text-accent font-mono leading-none">
-                  {data.projects.length}
+                  +{data.projects.length}
                 </div>
                 <BoldLabel className="text-bg/50 mt-3 block group-hover:text-bg transition-colors">
-                  Projects
+                  {strings.about.projects}
                 </BoldLabel>
               </motion.div>
 
@@ -127,7 +132,7 @@ export const AboutSection = ({ data }: AboutSectionProps) => {
                   {new Date().getFullYear() - 2017}
                 </div>
                 <BoldLabel className="text-bg/50 mt-3 block group-hover:text-bg transition-colors">
-                  Years Coding
+                  {strings.about.yearsCoding}
                 </BoldLabel>
               </motion.div>
             </div>
@@ -142,9 +147,9 @@ export const AboutSection = ({ data }: AboutSectionProps) => {
           >
             <div className="border-4 border-bg h-full">
               <div className="bg-bg text-black px-6 py-4 flex items-center justify-between">
-                <BoldLabel>TECH STACK</BoldLabel>
+                <BoldLabel>{strings.about.techStack}</BoldLabel>
                 <span className="text-xs font-mono text-black/40">
-                  {allSkills.length} skills
+                  {allSkills.length} {strings.about.skillsCount}
                 </span>
               </div>
 
