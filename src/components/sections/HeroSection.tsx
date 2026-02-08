@@ -95,7 +95,7 @@ export const HeroSection = ({ data }: HeroSectionProps) => {
           className="mt-12 flex flex-wrap gap-4"
         >
           <a
-            href="#work"
+            href="#projects"
             className="inline-flex items-center gap-4 px-8 py-4 bg-black text-bg font-bold uppercase tracking-[0.2em] text-sm hover:bg-accent transition-colors border-4 border-black font-mono"
           >
             View Work
