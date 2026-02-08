@@ -41,7 +41,7 @@ export const Navigation = ({
       role="navigation"
       aria-label="Main navigation"
     >
-      <div className="max-w-450 mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="max-w-450 mx-auto px-6 py-4 flex items-center justify-between relative">
         <motion.a
           href="#home"
           className="text-2xl font-black tracking-tighter font-mono"
@@ -76,7 +76,7 @@ export const Navigation = ({
           )}
         </div>
 
-        <ul className="hidden md:flex gap-0 list-none m-0 p-0 border-2 border-black">
+        <ul className="hidden md:flex gap-0 list-none m-0 p-0 border-2 border-black absolute left-1/2 -translate-x-1/2">
           {sectionIds.map((section, i) => (
             <li
               key={section}
