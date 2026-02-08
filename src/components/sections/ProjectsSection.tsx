@@ -137,7 +137,7 @@ const FeaturedProjectCard = ({
                     </span>
                     <ArrowRight
                       size={20}
-                      stroke-width={2.5}
+                      strokeWidth={2.5}
                       aria-hidden="true"
                     />
                   </motion.a>
@@ -252,7 +252,7 @@ const CompactProjectCard = ({
                 <span className="text-xs font-bold uppercase tracking-wider font-mono">
                   Demo
                 </span>
-                <ExternalLink size={16} stroke-width={2.5} aria-hidden="true" />
+                <ExternalLink size={16} strokeWidth={2.5} aria-hidden="true" />
               </motion.a>
             )}
           </div>

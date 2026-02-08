@@ -95,7 +95,7 @@ export const AboutSection = ({ data }: AboutSectionProps) => {
 
                 {/* Location */}
                 <div className="flex items-center gap-3 text-bg/60">
-                  <MapPin size={18} stroke-width={2.5} aria-hidden="true" />
+                  <MapPin size={18} strokeWidth={2.5} aria-hidden="true" />
                   <span className="font-mono text-sm">{data.location}</span>
                 </div>
               </div>
