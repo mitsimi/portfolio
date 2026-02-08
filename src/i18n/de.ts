@@ -17,7 +17,7 @@ export const strings = {
   },
   about: {
     sectionLabel: "02 / Über",
-    heading: "ÜBER",
+    heading: "ÜBER MICH",
     whoIAm: "WER ICH BIN",
     projects: "Projekte",
     yearsCoding: "Jahre Erfahrung",
